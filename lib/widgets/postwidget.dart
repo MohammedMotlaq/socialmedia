@@ -26,23 +26,37 @@ class postWidget extends StatelessWidget {
                   children: [
                     Row(
                         children:[
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(100),
-                            child: Image.network(user!.image!,width: 50,height: 50,),
+                          Container(
+                            margin: EdgeInsets.only(bottom: 5.0),
+                            width: 50,
+                            height: 50,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(100),
+                              child: Image.network(user!.image!,fit: BoxFit.fill,),
+                            ),
                           ),
-                          Text(user!.name!),
+                          Text(user!.name!,)
                         ]
                     ),
                     Image.asset('assets/icons/option.png',height: 24,width: 24,),
                   ],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(0.0),
-                child:ClipRRect(
-                  borderRadius: BorderRadius.circular(10),
-                  child: Image.network(post!.image!,fit: BoxFit.fill,height: 300,),
-                ),
+              Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(0.0),
+                    child:ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Image.network(post!.image!,fit: BoxFit.fill,height: 300,),
+                    ),
+                  ),
+                  Container(
+                      margin: EdgeInsets.fromLTRB(0,5,0,10),
+                      alignment: Alignment.topLeft,
+                      child: Text(post!.contant!,)
+                  ),
+                ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
