@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lec2/data/dummy-data-facebook.dart';
 import 'package:lec2/widgets/postwidgetfacebook.dart';
+import 'package:lec2/data/dummy-data-storyfacebook.dart';
+import 'package:lec2/widgets/storywidgetfacebook.dart';
 class Facebook extends StatelessWidget {
   //const Facebook ({Key? key}) : super(key: key);
 
@@ -37,13 +39,44 @@ class Facebook extends StatelessWidget {
           ],
         ),
       ),
-      body: ListView.builder(
-        scrollDirection: Axis.vertical,
-        itemCount: postss.length,
-        itemBuilder: (context,index){
-          return postWidgetFacebook(postss[index].user!,postss[index].post!);
-        },
+      // body: ListView.builder(
+      //   scrollDirection: Axis.horizontal,
+      //   itemCount: story.length,
+      //   itemBuilder: (context,index) => StoryFacebook(story[index].user!,story[index].story!),
+      //
+      // ),
+      body: Container(
+        child: Column(
+            children: [
+              Container(
+                height: 200,
+                width: 400,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: story.length,
+                  itemBuilder: (context,index) =>StoryFacebook(story[index].user!,story[index].story!),
+                ),
+              ),
+              Container(
+                width: 400,
+                height: 506,
+                child: ListView.builder(
+                  scrollDirection: Axis.vertical,
+                  itemCount: postss.length,
+                  itemBuilder: (context,index) => postWidgetFacebook(postss[index].user!,postss[index].post!),
+                ),
+              ),
+            ],
+          ),
       ),
+
+      // body: ListView.builder(
+      //   scrollDirection: Axis.vertical,
+      //   itemCount: story.length,
+      //   itemBuilder: (context,index){
+      //     return StoryFacebook(story[index].user!,story[index].story!);
+      //   },
+      // ),
       // body: SingleChildScrollView(
       //   scrollDirection: Axis.vertical,
       //   child: Container(
@@ -319,7 +352,7 @@ class Facebook extends StatelessWidget {
       //       ),
       //     ),
       //   ),
-      // ),
+      //),
       bottomNavigationBar: BottomAppBar(
           child: Container(
             height: 60,
