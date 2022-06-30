@@ -1,6 +1,6 @@
-import 'package:lec2/models/post.dart';
+import 'package:lec2/models/postinsta.dart';
 
-import 'user.dart';
+import 'userinsta.dart';
 
 
 class postRes {

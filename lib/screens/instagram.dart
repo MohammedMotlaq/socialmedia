@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:lec2/data/dummy-data.dart';
-import 'package:lec2/widgets/postwidget.dart';
+import 'package:lec2/data/dummy-data-insta.dart';
+import 'package:lec2/widgets/postwidgetinsta.dart';
 
 class Instagram extends StatelessWidget {
   //const Instagram({Key? key}) : super(key: key);
@@ -25,8 +25,9 @@ class Instagram extends StatelessWidget {
       body: ListView.builder(
           scrollDirection: Axis.vertical,
           itemCount: posts.length,
+
           itemBuilder: (context,index){
-            return postWidget(posts[index].user!,posts[index].post!);
+            return postWidgetInsta(posts[index].user!,posts[index].post!);
           },
         ),
         // child: Container(

@@ -1,8 +1,8 @@
 
 import 'package:flutter/material.dart';
-import 'package:lec2/screens/facebook_screen.dart';
-import 'instagram.dart';
-import 'myfirstui.dart';
+import 'screens/facebook_screen.dart';
+import 'screens/instagram.dart';
+//import 'screens/myfirstui.dart';
 void main() {
   runApp(MyApp());
 }
@@ -13,8 +13,9 @@ class MyApp extends StatelessWidget{
     // TODO: implement build
 
     //return MaterialApp(home: MyFirstUI(),);
-    //return MaterialApp(debugShowCheckedModeBanner: false,home: Facebook(),);
-    return MaterialApp(debugShowCheckedModeBanner: false,home: Instagram(),);
+    return MaterialApp(debugShowCheckedModeBanner: false,home: Facebook(),);
+    //return MaterialApp(debugShowCheckedModeBanner: false,home: Instagram(),)
+    // ;
 
   }
 

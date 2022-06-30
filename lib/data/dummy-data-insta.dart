@@ -1,4 +1,4 @@
-import 'package:lec2/models/postrespone.dart';
+import 'package:lec2/models/postresponseinsta.dart';
 
 List<Map<String, dynamic>> dummyData = [
   {

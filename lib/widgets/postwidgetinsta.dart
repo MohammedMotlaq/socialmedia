@@ -1,15 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:lec2/models/user.dart';
+import 'package:lec2/models/userinsta.dart';
 
 
-import '../models/post.dart';
+import '../models/postinsta.dart';
 
-class postWidget extends StatelessWidget {
+class postWidgetInsta extends StatelessWidget {
   User? user;
   Post? post;
 
-  postWidget(this.user, this.post);
+  postWidgetInsta(this.user, this.post);
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
