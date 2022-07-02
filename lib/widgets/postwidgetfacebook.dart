@@ -133,6 +133,12 @@ class postWidgetFacebook extends StatelessWidget {
                             Text("  Comment",style: TextStyle(fontSize: 12,color: Colors.black54),),
                           ],
                         ),
+                        Row(
+                          children: [
+                            Image.asset("assets/icons/share.png",width: 20,height: 18,),
+                            Text("  Share",style: TextStyle(fontSize: 12,color: Colors.black54),),
+                          ],
+                        ),
                       ],
                     ),
                   ),
@@ -145,7 +151,7 @@ class postWidgetFacebook extends StatelessWidget {
             child: const Divider(
               color: Colors.black12,
               height: 20,
-              thickness: 4,
+              thickness: 10,
               //indent: 10,
               //endIndent: 10,
             ),

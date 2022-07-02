@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:lec2/data/dummy-data-facebook.dart';
 import 'package:lec2/widgets/postwidgetfacebook.dart';
@@ -5,11 +7,12 @@ import 'package:lec2/data/dummy-data-storyfacebook.dart';
 import 'package:lec2/widgets/storywidgetfacebook.dart';
 class Facebook extends StatelessWidget {
   //const Facebook ({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
+    log(MediaQuery.of(context).size.height.toInt());
     return Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.black),
         backgroundColor: Colors.white,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -49,21 +52,25 @@ class Facebook extends StatelessWidget {
         child: Column(
             children: [
               Container(
-                height: 200,
-                width: 400,
+                height: MediaQuery.of(context).size.height*(2/9),
+                //width: double.infinity,
+                //color: Colors.amber,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: story.length,
                   itemBuilder: (context,index) =>StoryFacebook(story[index].user!,story[index].story!),
                 ),
               ),
-              Container(
-                width: 400,
-                height: 506,
-                child: ListView.builder(
-                  scrollDirection: Axis.vertical,
-                  itemCount: postss.length,
-                  itemBuilder: (context,index) => postWidgetFacebook(postss[index].user!,postss[index].post!),
+              Expanded(
+                child: Container(
+                  //width: double.infinity,
+                  //height: MediaQuery.of(context).size.height*(6/9),
+                  //color: Colors.red,
+                  child: ListView.builder(
+                    //scrollDirection: Axis.vertical,
+                    itemCount: postss.length,
+                    itemBuilder: (context,index) => postWidgetFacebook(postss[index].user!,postss[index].post!),
+                  ),
                 ),
               ),
             ],
